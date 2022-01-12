@@ -21,4 +21,9 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    public void addProduct(Product product) {
+        System.out.println(product + "<------ Heyyyy");
+        productRepository.save(product);
+    }
+
 }
