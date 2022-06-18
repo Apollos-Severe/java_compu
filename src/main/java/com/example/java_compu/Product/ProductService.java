@@ -26,4 +26,15 @@ public class ProductService {
         productRepository.save(product);
     }
 
+    public void deleteProduct(Long productId) {
+        System.out.println(productId + "<------ Heyyyy");
+        boolean productExists = productRepository.existsById(productId);
+
+        if (!productExists) {
+            throw new IllegalStateException("Product with id" + productId + "does not exists!");
+        }
+
+        productRepository.deleteById(productId);
+    }
+
 }

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 @Repository
 @Service // This class with be injected somewhere
 public interface PaymentRepository
-                extends JpaRepository<PaymentDetail, Long> {
+        extends JpaRepository<PaymentDetail, Long> {
 }

@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 @Service
 public interface UserRepository
-        extends JpaRepository<Users, Long> {
+                extends JpaRepository<Users, Long> {
 }
