@@ -15,14 +15,23 @@ public class Order {
     @Id
     @SequenceGenerator(name = "order_sequence", sequenceName = "order_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_sequence")
-
+    private Long id;
     private String[] status;
 
     public Order() {
     }
 
-    public Order(String[] status) {
+    public Order(Long id, String[] status) {
+        this.id = id;
         this.status = status;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String[] getStatus() {
@@ -31,6 +40,11 @@ public class Order {
 
     public void setStatus(String[] status) {
         this.status = status;
+    }
+
+    public Order id(Long id) {
+        setId(id);
+        return this;
     }
 
     public Order status(String[] status) {
@@ -46,18 +60,19 @@ public class Order {
             return false;
         }
         Order order = (Order) o;
-        return Objects.equals(status, order.status);
+        return Objects.equals(id, order.id) && Objects.equals(status, order.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(status);
+        return Objects.hash(id, status);
     }
 
     @Override
     public String toString() {
         return "{" +
-                " status='" + getStatus() + "'" +
+                " id='" + getId() + "'" +
+                ", status='" + getStatus() + "'" +
                 "}";
     }
 
