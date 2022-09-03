@@ -1,4 +1,4 @@
-package com.example.java_compu.Order;
+package com.example.java_compu.OrderObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
